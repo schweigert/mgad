@@ -3,9 +3,7 @@ version: '3'
 services:
 
   rudyc:
-    build:
-      context: ../.
-      dockerfile: build/rudyc/Dockerfile
+    image: schweigert/tcc:rudyc_v001
     command: rudyc
     environment:
       - RUDYWEB_URL=http://rudyweb
@@ -17,9 +15,7 @@ services:
 
 
   rudya:
-    build:
-      context: ../.
-      dockerfile: build/rudya/Dockerfile
+    image: schweigert/tcc:rudya_v001
     command: rudya
     environment:
       - ADDR=0.0.0.0:3000
@@ -29,9 +25,7 @@ services:
       - redis
 
   rudydb:
-    build:
-      context: ../.
-      dockerfile: build/rudydb/Dockerfile
+    image: schweigert/tcc:rudydb_v001
     command: rudydb
     environment:
       - ADDR=0.0.0.0:80
@@ -43,9 +37,7 @@ services:
       - postgres
 
   rudygh:
-    build:
-      context: ../.
-      dockerfile: build/rudygh/Dockerfile
+    image: schweigert/tcc:rudygh_v001
     command: rudygh
     environment:
       - ADDR=0.0.0.0:3000
@@ -54,9 +46,7 @@ services:
       - postgres
 
   rudyweb:
-    build:
-      context: ../.
-      dockerfile: build/rudyweb/Dockerfile
+    image: schweigert/tcc:rudyweb_v001
     command: rudyweb
     environment:
       - ADDR=0.0.0.0:80
@@ -69,7 +59,6 @@ services:
       - rudya
 
   redis:
-    container_name: redis
     image: redis
     ports:
       - 6379:6379
@@ -90,7 +79,6 @@ services:
 
   grafana:
     image: grafana/grafana
-    container_name: grafana
     ports:
       - 5050:3000
     volumes:
@@ -100,7 +88,6 @@ services:
 
   graphite:
     image: graphiteapp/graphite-statsd
-    container_name: graphite
     ports:
       - 2003:2003
     restart: always
