@@ -59,6 +59,7 @@ services:
       - rudya
 
   redis:
+    container_name: redis
     image: redis
     ports:
       - 6379:6379
@@ -79,6 +80,7 @@ services:
 
   grafana:
     image: grafana/grafana
+    container_name: grafana
     ports:
       - 5050:3000
     volumes:
@@ -88,6 +90,7 @@ services:
 
   graphite:
     image: graphiteapp/graphite-statsd
+    container_name: graphite
     ports:
       - 2003:2003
     restart: always
