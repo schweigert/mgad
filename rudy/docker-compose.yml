@@ -3,6 +3,7 @@ version: '3'
 services:
 
   rudyc:
+    container_name: rudyc
     image: schweigert/tcc:rudyc_v001
     command: rudyc
     environment:
@@ -15,6 +16,7 @@ services:
 
 
   rudya:
+      container_name: rudya
     image: schweigert/tcc:rudya_v001
     command: rudya
     environment:
@@ -25,6 +27,7 @@ services:
       - redis
 
   rudydb:
+    container_name: rudydb
     image: schweigert/tcc:rudydb_v001
     command: rudydb
     environment:
@@ -37,6 +40,7 @@ services:
       - postgres
 
   rudygh:
+    container_name: rudyweb
     image: schweigert/tcc:rudygh_v001
     command: rudygh
     environment:
@@ -46,6 +50,7 @@ services:
       - postgres
 
   rudyweb:
+    container_name: rudyweb
     image: schweigert/tcc:rudyweb_v001
     command: rudyweb
     environment:
@@ -59,6 +64,7 @@ services:
       - rudya
 
   redis:
+    container_name: redis
     image: redis
     ports:
       - 6379:6379
@@ -79,6 +85,7 @@ services:
 
   grafana:
     image: grafana/grafana
+    container_name: grafana
     ports:
       - 5050:3000
     volumes:
@@ -88,6 +95,7 @@ services:
 
   graphite:
     image: graphiteapp/graphite-statsd
+    container_name: graphite
     ports:
       - 2003:2003
     restart: always
