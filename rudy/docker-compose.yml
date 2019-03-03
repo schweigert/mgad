@@ -1,19 +1,6 @@
 version: '3'
 
 services:
-
-  rudyc:
-    image: schweigert/tcc:rudyc_v001
-    command: rudyc
-    environment:
-      - RUDYWEB_URL=http://rudyweb
-      - RUDYGH_ADDR=rudygh:3000
-      - GRAPHITE_PORT=2003
-      - GRAPHITE_ADDR=graphite
-    depends_on:
-      - rudyweb
-
-
   rudya:
     image: schweigert/tcc:rudya_v001
     command: rudya
@@ -76,24 +63,3 @@ services:
       - TZ=GMT
     logging:
       driver: none
-
-  grafana:
-    image: grafana/grafana
-    ports:
-      - 5050:3000
-    volumes:
-      - grafana-volume
-    logging:
-      driver: none
-
-  graphite:
-    image: graphiteapp/graphite-statsd
-    ports:
-      - 2003:2003
-    restart: always
-    logging:
-      driver: none
-
-volumes:
-  grafana-volume:
-    external: true
