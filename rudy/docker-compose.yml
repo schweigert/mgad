@@ -8,6 +8,8 @@ services:
       - ADDR=0.0.0.0:3000
       - RUDYDB_ADDR=http://rudydb
       - REDIS_ADDR=redis:6379
+    ports:
+      - 3000:3000
     depends_on:
       - redis
 
@@ -29,6 +31,8 @@ services:
     environment:
       - ADDR=0.0.0.0:3000
       - RUDYA_ADDR=rudya:3000
+    ports:
+      - 3002:3000
     depends_on:
       - postgres
 
@@ -40,7 +44,7 @@ services:
       - GIN_MODE=debug
       - RUDYDB_ADDR=http://rudydb
     ports:
-      - 3000:80
+      - 3003:80
     depends_on:
       - rudydb
       - rudya
@@ -48,7 +52,7 @@ services:
   redis:
     image: redis
     ports:
-      - 6379:6379
+      - 6379
     logging:
       driver: none
 
