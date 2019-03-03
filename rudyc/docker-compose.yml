@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  rudyc:
+    image: schweigert/tcc:rudyc_v001
+    command: rudyc
+    environment:
+      - RUDYWEB_URL=http://rudyweb
+      - RUDYGH_ADDR=rudygh:3000
+      - GRAPHITE_PORT=2003
+      - GRAPHITE_ADDR=192.168.1.2
