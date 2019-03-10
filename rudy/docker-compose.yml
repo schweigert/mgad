@@ -7,11 +7,9 @@ services:
     environment:
       - ADDR=0.0.0.0:3000
       - RUDYDB_ADDR=http://rudydb:3001
-      - REDIS_ADDR=redis:6379
+      - REDIS_ADDR=192.168.3.11:6379
     ports:
       - 3000
-    depends_on:
-      - redis
 
   rudydb:
     image: schweigert/tcc:rudydb_v001
@@ -19,11 +17,9 @@ services:
     environment:
       - ADDR=0.0.0.0:3001
       - GIN_MODE=debug
-      - DB_CONFIG=host=postgres port=5432 user=postgres password=postgres sslmode=disable dbname=game
+      - DB_CONFIG=host=192.168.3.11 port=5432 user=postgres password=postgres sslmode=disable dbname=game
     ports:
       - 3001:3001
-    depends_on:
-      - postgres
 
   rudygh:
     image: schweigert/tcc:rudygh_v001
@@ -33,8 +29,6 @@ services:
       - RUDYA_ADDR=rudya:3000
     ports:
       - 3002:3002
-    depends_on:
-      - postgres
 
   rudyweb:
     image: schweigert/tcc:rudyweb_v001
@@ -48,22 +42,3 @@ services:
     depends_on:
       - rudydb
       - rudya
-
-  redis:
-    image: redis
-    ports:
-      - 6379
-    logging:
-      driver: none
-
-  postgres:
-    image: postgres:9.6
-    ports:
-      - 5432
-    environment:
-      - POSTGRES_DB=game
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - TZ=GMT
-    logging:
-      driver: none
