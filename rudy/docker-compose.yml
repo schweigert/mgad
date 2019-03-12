@@ -2,12 +2,14 @@ version: '3'
 
 services:
   rudya:
-    image: schweigert/tcc:rudya_v001
+    image: schweigert/tcc:rudya_v002
     command: rudya
     environment:
       - ADDR=0.0.0.0:3000
       - RUDYDB_ADDR=http://rudydb:3001
       - REDIS_ADDR=192.168.3.11:6379
+      - GRAPHITE_PORT=2003
+      - GRAPHITE_ADDR=192.168.1.2
     ports:
       - 3000
 
