@@ -6,7 +6,7 @@ services:
     image: schweigert/tcc:rudyc_v001
     command: rudyc
     environment:
-      - RUDYWEB_URL=http://192.168.0.2:3003
-      - RUDYGH_ADDR=192.168.0.2:3002
+      - RUDYWEB_URL=http://192.168.0.8:3003
+      - RUDYGH_ADDR=192.168.0.8:3002
       - GRAPHITE_PORT=2003
       - GRAPHITE_ADDR=192.168.1.2
