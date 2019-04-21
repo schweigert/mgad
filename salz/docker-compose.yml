@@ -1,23 +1,6 @@
 version: '3'
 
 services:
-
-  salzc:
-    image: schweigert/tcc:salzc_v003
-    command: salzc
-    environment:
-      - GRAPHITE_PORT=2003
-      - GRAPHITE_ADDR=graphite
-      - SALZWEB_URL=http://salzweb
-      - SALZA_ADDR=salza:3000
-      - SALZGH_ADDR=salzgh:3000
-      - SALZCHAT_ADDR=salzchat:3000
-    depends_on:
-      - salzweb
-      - salza
-      - salzgh
-      - salzchat
-
   salzweb:
     image: schweigert/tcc:salzweb_v003
     command: salzweb
