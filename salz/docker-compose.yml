@@ -8,7 +8,7 @@ services:
       - ADDR=0.0.0.0:80
       - DB_CONFIG=host=192.168.3.11 port=5432 user=postgres password=postgres sslmode=disable dbname=game
     ports:
-      - "3000:80"
+      - "80:3000"
 
   salza:
     image: schweigert/tcc:salza_v003
@@ -18,7 +18,7 @@ services:
       - DB_CONFIG=host=192.168.3.11 port=5432 user=postgres password=postgres sslmode=disable dbname=game
       - REDIS_ADDR=192.168.3.11:6379
     ports:
-      - "3000:3001"
+      - "3001:3000"
 
   salzchat:
     image: schweigert/tcc:salzchat_v003
@@ -29,7 +29,7 @@ services:
     depends_on:
       - salza
     ports:
-    - "3000:3002"
+      - "3002:3000"
 
   salzgh:
     image: schweigert/tcc:salzgh_v003
@@ -40,4 +40,4 @@ services:
     depends_on:
       - salza
     ports:
-      - "3000:3003"
+      - "3003:3000"
