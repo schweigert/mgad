@@ -2,9 +2,7 @@ version: '3'
 
 services:
   salzc:
-    build:
-      context: ../.
-      dockerfile: build/salzc/Dockerfile
+    image: schweigert/tcc:salzc_v003
     command: salzc
     environment:
       - SALZWEB_URL=http://192.168.0.8
