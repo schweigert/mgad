@@ -45,8 +45,8 @@ services:
       - SALZA_ADDR=salza:3000
     depends_on:
       - salza
-      ports:
-      - "3000:3002"
+    ports:
+    - "3000:3002"
 
   salzgh:
     image: schweigert/tcc:salzgh_v003
