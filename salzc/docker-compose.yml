@@ -1,0 +1,16 @@
+  salzc:
+    build:
+      context: ../.
+      dockerfile: build/salzc/Dockerfile
+    command: salzc
+    environment:
+      - GRAPHITE_PORT=2003
+      - GRAPHITE_ADDR=graphite
+      - SALZWEB_URL=http://192.168.0.8
+      - SALZA_ADDR=192.168.0.8:3001
+      - SALZCHAT_ADDR=192.168.0.8:3002
+      - SALZGH_ADDR=192.168.0.8:3003
+      - RUDYWEB_URL=http://192.168.0.8:3003
+      - RUDYGH_ADDR=192.168.0.8:3002
+      - GRAPHITE_PORT=2003
+      - GRAPHITE_ADDR=192.168.1.2
