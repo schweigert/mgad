@@ -7,8 +7,6 @@ services:
       dockerfile: build/salzc/Dockerfile
     command: salzc
     environment:
-      - GRAPHITE_PORT=2003
-      - GRAPHITE_ADDR=graphite
       - SALZWEB_URL=http://192.168.0.8
       - SALZA_ADDR=192.168.0.8:3001
       - SALZCHAT_ADDR=192.168.0.8:3002
