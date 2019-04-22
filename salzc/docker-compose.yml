@@ -5,7 +5,7 @@ services:
     image: schweigert/tcc:salzc_v003
     command: salzc
     environment:
-      - SALZWEB_URL=http://192.168.0.8
+      - SALZWEB_URL=http://192.168.0.8:3000
       - SALZA_ADDR=192.168.0.8:3001
       - SALZCHAT_ADDR=192.168.0.8:3002
       - SALZGH_ADDR=192.168.0.8:3003
