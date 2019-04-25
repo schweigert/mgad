@@ -2,7 +2,7 @@ version: '3'
 
 services:
   salzc:
-    image: schweigert/tcc:salzc_v003
+    image: schweigert/tcc:salzc_v004
     command: salzc
     environment:
       - SALZWEB_URL=http://192.168.0.8:3000
