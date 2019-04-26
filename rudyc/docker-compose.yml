@@ -3,7 +3,7 @@ version: '3'
 services:
 
   rudyc:
-    image: schweigert/tcc:rudyc_v004
+    image: schweigert/tcc:rudyc_v005
     command: rudyc
     environment:
       - RUDYWEB_URL=http://192.168.0.8:3003
