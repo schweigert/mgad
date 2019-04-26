@@ -2,7 +2,7 @@ version: '3'
 
 services:
   salzweb:
-    image: schweigert/tcc:salzweb_v005
+    image: schweigert/tcc:salzweb_v006
     command: salzweb
     environment:
       - ADDR=0.0.0.0:80
@@ -11,7 +11,7 @@ services:
       - "3000:80"
 
   salza:
-    image: schweigert/tcc:salza_v005
+    image: schweigert/tcc:salza_v006
     command: salza
     environment:
       - ADDR=0.0.0.0:3000
@@ -21,7 +21,7 @@ services:
       - "3001:3000"
 
   salzchat:
-    image: schweigert/tcc:salzchat_v005
+    image: schweigert/tcc:salzchat_v006
     command: salzchat
     environment:
       - ADDR=0.0.0.0:3000
@@ -32,7 +32,7 @@ services:
       - "3002:3000"
 
   salzgh:
-    image: schweigert/tcc:salzgh_v005
+    image: schweigert/tcc:salzgh_v006
     command: salzgh
     environment:
       - ADDR=0.0.0.0:3000

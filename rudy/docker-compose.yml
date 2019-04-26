@@ -2,7 +2,7 @@ version: '3'
 
 services:
   rudya:
-    image: schweigert/tcc:rudya_v005
+    image: schweigert/tcc:rudya_v006
     command: rudya
     environment:
       - ADDR=0.0.0.0:3000
@@ -14,7 +14,7 @@ services:
       - 3000
 
   rudydb:
-    image: schweigert/tcc:rudydb_v005
+    image: schweigert/tcc:rudydb_v006
     command: rudydb
     environment:
       - ADDR=0.0.0.0:3001
@@ -24,7 +24,7 @@ services:
       - 3001:3001
 
   rudygh:
-    image: schweigert/tcc:rudygh_v005
+    image: schweigert/tcc:rudygh_v006
     command: rudygh
     environment:
       - ADDR=0.0.0.0:3002
@@ -33,7 +33,7 @@ services:
       - 3002:3002
 
   rudyweb:
-    image: schweigert/tcc:rudyweb_v005
+    image: schweigert/tcc:rudyweb_v006
     command: rudyweb
     environment:
       - ADDR=0.0.0.0:3003
