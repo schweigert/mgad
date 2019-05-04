@@ -1,7 +1,7 @@
 \curl -sSL https://get.rvm.io | bash
 
 
-source /home/ubuntu/.rvm/scripts/rvm
+source /etc/profile.d/rvm.sh
 
 
 rvm install 2.5.2
